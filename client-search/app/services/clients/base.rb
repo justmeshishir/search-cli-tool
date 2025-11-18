@@ -17,5 +17,11 @@ module Clients
     rescue Errno::ENOENT
       raise "File not found: #{@file_path}"
     end
+
+    def normalized(string)
+      return nil if string.blank?
+
+      string.to_s.downcase.strip
+    end
   end
 end

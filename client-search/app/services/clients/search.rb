@@ -7,11 +7,5 @@ module Clients
     def find_by(search_key, search_value)
       clients.filter { |client| normalized(client[search_key]).include?(normalized(search_value)) }
     end
-
-    private
-
-    def normalized(string)
-      string.to_s.downcase.strip
-    end
   end
 end
