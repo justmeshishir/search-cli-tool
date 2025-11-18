@@ -2,8 +2,8 @@ module Clients
   class Base
     attr_reader :clients
 
-    def initialize
-      @file_path = "app/services/clients/clients.json".freeze
+    def initialize(file_path)
+      @file_path = file_path || "app/services/clients/clients.json".freeze
       @clients = load_clients
     end
 
