@@ -47,5 +47,16 @@ RSpec.describe Clients::Base, type: :services do
                                        { "email" => "jane.smith@yahoo.com", "full_name" => "Jane Smith", "id" => 2 } ])
       end
     end
+
+    context "when file has empty array" do
+      it "returns empty array" do
+        file = Tempfile.new(%w[empty json])
+        file.write("[]")
+        file.close
+
+        service = described_class.new(file.path)
+        expect(service.clients). to eq([])
+      end
+    end
   end
 end
