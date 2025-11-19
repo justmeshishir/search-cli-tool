@@ -12,13 +12,15 @@ namespace :client do
         next
       end
 
-    puts Clients::Search.find_by(search_key, search_value)
+    clients = Clients::Search.find_by(search_key, search_value)
+    puts clients.presence || "No result found"
   end
 
   # rake "client:find_duplicates"
   desc "Find duplicate clients"
   task find_duplicates: :environment do
-    puts Clients::FindDuplicates.call
+    duplicates = Clients::FindDuplicates.call
+    puts duplicates.presence || "No duplicates found"
   end
 end
 
