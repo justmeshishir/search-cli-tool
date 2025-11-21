@@ -6,7 +6,7 @@ This project uses Ruby version `3.4.2` and Rails version `7.2.3`.
 
 **Setup and usage instructions**
 
-* Clone the repo and run `cd client-search`
+* Clone the repo and run `cd seacrh-cli-tool`
 
 * Run `bundle install`
 
